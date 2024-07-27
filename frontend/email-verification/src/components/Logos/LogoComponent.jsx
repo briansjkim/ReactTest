@@ -10,12 +10,12 @@ export default function LogoComponent() {
         className="logo img-fluid"
         src={disboundLogo}
         alt="Disbound Logo"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/login")}
         style={{ cursor: "pointer" }}
       />
       <h1
         className="text-uppercase disbound-text"
-        style={{ "font-size": "2.4rem", marginBottom: "2.4rem" }}
+        style={{ fontSize: "2.4rem", marginBottom: "2.4rem" }}
       >
         Disbound
       </h1>

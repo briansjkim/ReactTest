@@ -136,11 +136,11 @@ export default function EmailVerificationPage() {
             {/* ENTER OTP HEADING */}
             <h3
               className="main-purple fw-bold mb-3"
-              style={{ "font-size": "2.4rem" }}
+              style={{ fontSize: "2.4rem" }}
             >
               Enter the One-Time Password
             </h3>
-            <p style={{ "font-size": "1.2rem" }}>
+            <p style={{ fontSize: "1.2rem" }}>
               Please enter the OTP that was sent to your Email ID:{" "}
               {currentUser?.email}
             </p>
@@ -179,7 +179,7 @@ export default function EmailVerificationPage() {
                 onClick={sendEmailOtp}
                 className="d-block mobile-text"
                 id="resend"
-                style={{ "font-size": "1.2rem" }}
+                style={{ fontSize: "1.2rem" }}
               >
                 {count > 0 ? `Resend in ${count} secs` : "Resend OTP"}
               </span>

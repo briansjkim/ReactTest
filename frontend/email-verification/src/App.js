@@ -4,6 +4,7 @@ import {
   Route,
   createRoutesFromElements,
   RouterProvider,
+  useRouteError,
 } from "react-router-dom";
 import { useState, createContext, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +14,9 @@ import EmailVerificationPage from "./pages/EmailVerification.jsx";
 
 // LAYOUTS
 import LoginLayout from "./layouts/LoginLayout";
+
+// ERROR PAGE
+import ErrorPage from "./pages/ErrorPage";
 
 export const CurrentUserContext = createContext(null);
 
@@ -41,12 +45,26 @@ function App() {
       .catch((error) => console.error("Error:", error));
   }, [currentUser]);
 
+  function ErrorBoundary() {
+    let error = useRouteError();
+    console.error(error);
+
+    return <ErrorPage />;
+  }
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         {/* LOGIN PAGE ROUTES */}
-        <Route path="login" element={<LoginLayout />}>
-          <Route path="emailverification" element={<EmailVerificationPage />} />
+        <Route
+          path="/login"
+          element={<LoginLayout />}
+          errorElement={<ErrorBoundary />}
+        >
+          <Route
+            path="/login/emailverification"
+            element={<EmailVerificationPage />}
+          />
         </Route>
       </>
     )

@@ -8,7 +8,7 @@ export default function LogoText() {
       className="logo img-fluid"
       src={DisboundLogo_NoText}
       alt="Disbound Logo"
-      onClick={() => navigate("/")}
+      onClick={() => navigate("/login")}
       style={{ cursor: "pointer" }}
     />
   );
